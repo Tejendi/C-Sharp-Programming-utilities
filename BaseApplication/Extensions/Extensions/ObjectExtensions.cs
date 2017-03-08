@@ -38,6 +38,13 @@ namespace Extensions.Extensions
             return dictionary;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="property"></param>
+        /// <param name="source"></param>
+        /// <param name="dictionary"></param>
         private static void AddPropertyToDictionary<T>(PropertyDescriptor property, object source, Dictionary<string, T> dictionary)
         {
             object value = property.GetValue(source);
@@ -52,6 +59,12 @@ namespace Extensions.Extensions
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value"></param>
+        /// <returns></returns>
         private static bool IsOfType<T>(object value)
         {
             return value is T;

@@ -18,11 +18,21 @@ namespace Extensions.Extensions
             return Comparer<int>.Default.Compare(value, start) >= 0 && Comparer<int>.Default.Compare(value, end) <= 0;
         }
 
+        /// <summary>
+        /// Check if int is odd
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool IsOdd(this int value)
         {
             return value % 2 != 0;
         }
 
+        /// <summary>
+        /// Check if int is even
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool IsEven(this int value)
         {
             return value % 2 == 0;
