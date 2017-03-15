@@ -22,7 +22,7 @@ namespace Tests.Tests
         {
             DateTime startDate = new DateTime(2000, 01, 01);
             DateTime endDate = new DateTime(2001, 12, 31);
-            DateTime selectedDate = new DateTime(2000, 03,03);
+            DateTime selectedDate = new DateTime(2000, 03, 03);
 
             Assert.IsTrue(selectedDate.IsBetween(startDate, endDate));
         }
