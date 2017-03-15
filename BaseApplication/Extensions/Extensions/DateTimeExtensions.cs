@@ -20,15 +20,15 @@ namespace Extensions.Extensions
         }
 
         /// <summary>
-        /// Validate supplied dt is between rangeBeg and rangeEnd
+        /// Validate supplied dt is between startDate and endDate
         /// </summary>
         /// <param name="dt"></param>
-        /// <param name="rangeBeg"></param>
-        /// <param name="rangeEnd"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
         /// <returns></returns>
-        public static bool IsBetween(this DateTime dt, DateTime rangeBeg, DateTime rangeEnd)
+        public static bool IsBetween(this DateTime dt, DateTime startDate, DateTime endDate)
         {
-            return dt.Ticks >= rangeBeg.Ticks && dt.Ticks <= rangeEnd.Ticks;
+            return dt.Ticks >= startDate.Ticks && dt.Ticks <= endDate.Ticks;
         }
     }
 }
