@@ -108,10 +108,8 @@ namespace Extensions.Extensions
                 DateTime dt;
                 return (DateTime.TryParse(str, out dt));
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
         /// <summary>
@@ -125,7 +123,6 @@ namespace Extensions.Extensions
             {
                 return string.Empty;
             }
-
 
             return str;
         }
