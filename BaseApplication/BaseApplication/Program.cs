@@ -11,7 +11,24 @@ namespace BaseApplication
     {
         static void Main(string[] args)
         {
-            
+            #region DateTimeExtension Exampels
+            #endregion
+
+            #region EnumerableExtension Exampels
+            #endregion
+
+            #region IntegerExtension Exampels
+            #endregion
+
+            #region NullableExtension Exampels
+            #endregion
+
+            #region ObjectExtension Exampels
+            #endregion
+
+            #region StringExtension Exampels
+
+            #endregion
         }
     }
 }
