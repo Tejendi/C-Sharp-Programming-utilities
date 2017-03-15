@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objects\TestObject.cs" />
     <Compile Include="Tests\DateTimeExtensionTests.cs" />
     <Compile Include="Tests\EnumerableExtensionTests.cs" />
     <Compile Include="Tests\IntigerExtensionTests.cs" />
