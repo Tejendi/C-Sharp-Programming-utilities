@@ -31,7 +31,7 @@ namespace Tests.TestCases
         }
 
         [TestMethod]
-        public void FindMin()
+        public void FindMinValue()
         {
             List<TestObject> testObjectList = new List<TestObject>()
             {
@@ -41,12 +41,11 @@ namespace Tests.TestCases
             };
 
             TestObject minAge = testObjectList.FindMin(o => o.Age);
-
             Assert.AreEqual(1, minAge.Age);
         }
 
         [TestMethod]
-        public void FindMax()
+        public void FindMaxValue()
         {
             List<TestObject> testObjectList = new List<TestObject>()
             {
