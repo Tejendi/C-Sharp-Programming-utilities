@@ -25,6 +25,7 @@ namespace Tests.Tests
             DateTime selectedDate = new DateTime(2000, 03, 03);
 
             Assert.IsTrue(selectedDate.IsBetween(startDate, endDate));
+            Assert.IsFalse(selectedDate.IsBetween(endDate, startDate));
         }
     }
 }
