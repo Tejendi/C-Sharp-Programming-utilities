@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Extensions.Extensions;
+﻿using Extensions.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests.Objects;
 
-namespace Tests.Tests
+namespace Tests.TestCases
 {
     [TestClass]
     public class NullableExtensionTests

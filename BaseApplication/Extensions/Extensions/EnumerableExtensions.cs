@@ -15,7 +15,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static bool In<T>(this T source, IEnumerable<T> list)
         {
-            if (null == source)
+            if (source == null)
             {
                 throw new ArgumentNullException(nameof(source));
             }
@@ -35,20 +35,21 @@ namespace Extensions.Extensions
         {
             T result = list.FirstOrDefault();
 
-            if (result != null)
-            {
-                TValue bestMin = predicate(result);
+            if (result == null)
+                return result;
 
-                foreach (T item in list.Skip(1))
+            TValue bestMin = predicate(result);
+
+            foreach (T item in list.Skip(1))
+            {
+                TValue v = predicate(item);
+                if (v.CompareTo(bestMin) < 0)
                 {
-                    TValue v = predicate(item);
-                    if (v.CompareTo(bestMin) < 0)
-                    {
-                        bestMin = v;
-                        result = item;
-                    }
+                    bestMin = v;
+                    result = item;
                 }
             }
+
             return result;
         }
 
@@ -64,24 +65,22 @@ namespace Extensions.Extensions
         {
             T result = list.FirstOrDefault();
 
-            if (result != null)
-            {
-                TValue bestMax = predicate(result);
+            if (result == null)
+                return result;
 
-                foreach (T item in list.Skip(1))
+            TValue bestMax = predicate(result);
+
+            foreach (T item in list.Skip(1))
+            {
+                TValue v = predicate(item);
+                if (v.CompareTo(bestMax) > 0)
                 {
-                    TValue v = predicate(item);
-                    if (v.CompareTo(bestMax) > 0)
-                    {
-                        bestMax = v;
-                        result = item;
-                    }
+                    bestMax = v;
+                    result = item;
                 }
             }
 
             return result;
         }
-
-
     }
 }

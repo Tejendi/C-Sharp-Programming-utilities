@@ -5,7 +5,7 @@ namespace Extensions.Extensions
     public static class StringExtensions
     {
         /// <summary>
-        /// 
+        /// Trim and lowercase text
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -20,7 +20,7 @@ namespace Extensions.Extensions
         }
 
         /// <summary>
-        /// 
+        /// Trim and uppercase text
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -35,7 +35,7 @@ namespace Extensions.Extensions
         }
 
         /// <summary>
-        /// 
+        /// Remove last character of text
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>

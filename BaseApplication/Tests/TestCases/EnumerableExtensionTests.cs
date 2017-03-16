@@ -3,7 +3,7 @@ using Extensions.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests.Objects;
 
-namespace Tests.Tests
+namespace Tests.TestCases
 {
     [TestClass]
     public class EnumerableExtensionTests
@@ -14,7 +14,7 @@ namespace Tests.Tests
             List<int> intList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
             const int intValue = 2;
 
-            intValue.In(intList);
+            Assert.IsTrue(intValue.In(intList));
         }
 
         [TestMethod]
@@ -27,9 +27,7 @@ namespace Tests.Tests
                 new TestObject {Name = "Unit Test", Age = 12},
             };
 
-            TestObject objectToFind = new TestObject { Name = "Daniel Christensen", Age = 30 };
-
-            objectToFind.In(testObjectList);
+            Assert.IsTrue(testObjectList[1].In(testObjectList));
         }
 
         [TestMethod]

@@ -49,12 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Objects\TestObject.cs" />
-    <Compile Include="Tests\DateTimeExtensionTests.cs" />
-    <Compile Include="Tests\EnumerableExtensionTests.cs" />
-    <Compile Include="Tests\IntigerExtensionTests.cs" />
-    <Compile Include="Tests\NullableExtensionTests.cs" />
-    <Compile Include="Tests\ObjectExtensionTests.cs" />
-    <Compile Include="Tests\StringExtensionTests.cs" />
+    <Compile Include="TestCases\DateTimeExtensionTests.cs" />
+    <Compile Include="TestCases\EnumerableExtensionTests.cs" />
+    <Compile Include="TestCases\IntigerExtensionTests.cs" />
+    <Compile Include="TestCases\NullableExtensionTests.cs" />
+    <Compile Include="TestCases\ObjectExtensionTests.cs" />
+    <Compile Include="TestCases\StringExtensionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

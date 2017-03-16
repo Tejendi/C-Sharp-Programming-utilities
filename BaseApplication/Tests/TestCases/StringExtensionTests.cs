@@ -2,7 +2,7 @@
 using Extensions.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.Tests
+namespace Tests.TestCases
 {
     [TestClass]
     public class StringExtensionTests
