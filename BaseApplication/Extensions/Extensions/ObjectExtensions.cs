@@ -11,18 +11,18 @@ namespace Extensions.Extensions
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static IDictionary<string, object> ToDictionary(this object source)
+        public static IDictionary<string, object> PropertiesToDictionary(this object source)
         {
-            return source.ToDictionary<object>();
+            return source.PropertiesToDictionaryValueOfType<object>();
         }
 
         /// <summary>
-        /// Converts the object properties to a dictionary
+        /// Converts the object properties to a dictionary the value type of the properties can be set with the type parameter
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static IDictionary<string, T> ToDictionary<T>(this object source)
+        public static IDictionary<string, T> PropertiesToDictionaryValueOfType<T>(this object source)
         {
             if (source == null)
             {
@@ -38,13 +38,7 @@ namespace Extensions.Extensions
             return dictionary;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="property"></param>
-        /// <param name="source"></param>
-        /// <param name="dictionary"></param>
+
         private static void AddPropertyToDictionary<T>(PropertyDescriptor property, object source, Dictionary<string, T> dictionary)
         {
             object value = property.GetValue(source);
@@ -59,17 +53,10 @@ namespace Extensions.Extensions
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        private static bool IsOfType<T>(object value)
+
+        private static bool IsOfType<T>(this object value)
         {
             return value is T;
         }
-
-
     }
 }
