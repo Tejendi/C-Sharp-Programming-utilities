@@ -11,12 +11,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static string TrimToLowerInvariant(this String str)
         {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return string.Empty;
-            }
-
-            return str.Trim().ToLowerInvariant();
+            return string.IsNullOrWhiteSpace(str) ? string.Empty : str.Trim().ToLowerInvariant();
         }
 
         /// <summary>
@@ -26,12 +21,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static string TrimToUpperInvariant(this String str)
         {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return string.Empty;
-            }
-
-            return str.Trim().ToUpperInvariant();
+            return string.IsNullOrWhiteSpace(str) ? string.Empty : str.Trim().ToUpperInvariant();
         }
 
         /// <summary>
@@ -41,12 +31,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static string RemoveLastCharacter(this String str)
         {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return string.Empty;
-            }
-
-            return str.Substring(0, str.Length - 1);
+            return string.IsNullOrWhiteSpace(str) ? string.Empty : str.Substring(0, str.Length - 1);
         }
 
         /// <summary>
@@ -57,12 +42,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static string RemoveLast(this String str, int number)
         {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return string.Empty;
-            }
-
-            return str.Substring(0, str.Length - number);
+            return string.IsNullOrWhiteSpace(str) ? string.Empty : str.Substring(0, str.Length - number);
         }
 
         /// <summary>
@@ -72,12 +52,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static string RemoveFirstCharacter(this String str)
         {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return string.Empty;
-            }
-
-            return str.Substring(1);
+            return string.IsNullOrWhiteSpace(str) ? string.Empty : str.Substring(1);
         }
 
         /// <summary>
@@ -88,12 +63,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static string RemoveFirst(this String str, int number)
         {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return string.Empty;
-            }
-
-            return str.Substring(number);
+            return string.IsNullOrWhiteSpace(str) ? string.Empty : str.Substring(number);
         }
 
         /// <summary>
@@ -103,13 +73,11 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static bool IsDate(this String str)
         {
-            if (!string.IsNullOrWhiteSpace(str))
-            {
-                DateTime dt;
-                return (DateTime.TryParse(str, out dt));
-            }
+            if (string.IsNullOrWhiteSpace(str))
+                return false;
 
-            return false;
+            DateTime dt;
+            return (DateTime.TryParse(str, out dt));
         }
 
         /// <summary>
@@ -119,12 +87,7 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static string NullStringToEmptyString(this String str)
         {
-            if (string.IsNullOrWhiteSpace(str))
-            {
-                return string.Empty;
-            }
-
-            return str;
+            return string.IsNullOrWhiteSpace(str) ? string.Empty : str;
         }
     }
 }

@@ -87,7 +87,7 @@ namespace Tests.TestCases
         public void NullStringToEmptyString()
         {
             string nullString = null;
-            string emptyString = "";
+            const string emptyString = "";
 
             Assert.AreEqual(emptyString, nullString.NullStringToEmptyString());
 

@@ -43,11 +43,12 @@ namespace Extensions.Extensions
             foreach (T item in list.Skip(1))
             {
                 TValue v = predicate(item);
-                if (v.CompareTo(bestMin) < 0)
-                {
-                    bestMin = v;
-                    result = item;
-                }
+
+                if (v.CompareTo(bestMin) >= 0)
+                    continue;
+
+                bestMin = v;
+                result = item;
             }
 
             return result;
@@ -73,11 +74,12 @@ namespace Extensions.Extensions
             foreach (T item in list.Skip(1))
             {
                 TValue v = predicate(item);
-                if (v.CompareTo(bestMax) > 0)
-                {
-                    bestMax = v;
-                    result = item;
-                }
+
+                if (v.CompareTo(bestMax) <= 0)
+                    continue;
+
+                bestMax = v;
+                result = item;
             }
 
             return result;

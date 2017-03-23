@@ -45,6 +45,20 @@ namespace Tests.TestCases
         }
 
         [TestMethod]
+        public void FindMinValueWhereAllIsMin()
+        {
+            List<TestObject> testObjectList = new List<TestObject>()
+            {
+                new TestObject {Name = "Test Test", Age = 1},
+                new TestObject {Name = "Daniel Christensen", Age = 1},
+                new TestObject {Name = "Unit Test", Age = 1},
+            };
+
+            TestObject minAge = testObjectList.FindMin(o => o.Age);
+            Assert.AreEqual(1, minAge.Age);
+        }
+
+        [TestMethod]
         public void FindMaxValue()
         {
             List<TestObject> testObjectList = new List<TestObject>()
@@ -52,6 +66,20 @@ namespace Tests.TestCases
                 new TestObject {Name = "Test Test", Age = 1},
                 new TestObject {Name = "Daniel Christensen", Age = 30},
                 new TestObject {Name = "Unit Test", Age = 12},
+            };
+
+            TestObject maxAge = testObjectList.FindMax(o => o.Age);
+            Assert.AreEqual(30, maxAge.Age);
+        }
+
+        [TestMethod]
+        public void FindMaxValueWhereAllIsMax()
+        {
+            List<TestObject> testObjectList = new List<TestObject>()
+            {
+                new TestObject {Name = "Test Test", Age = 30},
+                new TestObject {Name = "Daniel Christensen", Age = 30},
+                new TestObject {Name = "Unit Test", Age = 30},
             };
 
             TestObject maxAge = testObjectList.FindMax(o => o.Age);
