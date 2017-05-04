@@ -74,7 +74,9 @@ namespace Extensions.Extensions
         public static bool IsDate(this String str)
         {
             if (string.IsNullOrWhiteSpace(str))
+            {
                 return false;
+            }
 
             DateTime dt;
             return (DateTime.TryParse(str, out dt));

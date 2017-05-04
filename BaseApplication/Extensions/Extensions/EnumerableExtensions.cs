@@ -33,19 +33,24 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static T FindMin<T, TValue>(this IEnumerable<T> list, Func<T, TValue> predicate) where TValue : IComparable<TValue>
         {
-            T result = list.FirstOrDefault();
+            IEnumerable<T> enumerable = list as T[] ?? list.ToArray();
+            T result = enumerable.FirstOrDefault();
 
             if (result == null)
-                return result;
+            {
+                return default(T);
+            }
 
             TValue bestMin = predicate(result);
 
-            foreach (T item in list.Skip(1))
+            foreach (T item in enumerable.Skip(1))
             {
                 TValue v = predicate(item);
 
                 if (v.CompareTo(bestMin) >= 0)
+                {
                     continue;
+                }
 
                 bestMin = v;
                 result = item;
@@ -64,19 +69,24 @@ namespace Extensions.Extensions
         /// <returns></returns>
         public static T FindMax<T, TValue>(this IEnumerable<T> list, Func<T, TValue> predicate) where TValue : IComparable<TValue>
         {
-            T result = list.FirstOrDefault();
+            IEnumerable<T> enumerable = list as T[] ?? list.ToArray();
+            T result = enumerable.FirstOrDefault();
 
             if (result == null)
-                return result;
+            {
+                return default(T);
+            }
 
             TValue bestMax = predicate(result);
 
-            foreach (T item in list.Skip(1))
+            foreach (T item in enumerable.Skip(1))
             {
                 TValue v = predicate(item);
 
                 if (v.CompareTo(bestMax) <= 0)
+                {
                     continue;
+                }
 
                 bestMax = v;
                 result = item;
