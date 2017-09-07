@@ -1,13 +1,13 @@
 ﻿using System;
 using Extensions.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Tests.TestCases
 {
-    [TestClass]
+    [TestFixture]
     public class DateTimeExtensionTests
     {
-        [TestMethod]
+        [TestCase()]
         public void IsDateToday()
         {
             DateTime currentDate = DateTime.Now;
@@ -15,7 +15,7 @@ namespace Tests.TestCases
             Assert.IsTrue(currentDate.IsToday());
         }
 
-        [TestMethod]
+        [TestCase()]
         public void IsDateNotToday()
         {
             DateTime yesterday = DateTime.Now.AddDays(-1);
@@ -23,7 +23,7 @@ namespace Tests.TestCases
             Assert.IsFalse(yesterday.IsToday());
         }
 
-        [TestMethod]
+        [TestCase()]
         public void IsDateBetween()
         {
             DateTime startDate = new DateTime(2000, 01, 01);
@@ -33,7 +33,7 @@ namespace Tests.TestCases
             Assert.IsTrue(selectedDate.IsBetween(startDate, endDate));
         }
 
-        [TestMethod]
+        [TestCase()]
         public void IsDateNotBetween()
         {
             DateTime startDate = new DateTime(2000, 01, 01);

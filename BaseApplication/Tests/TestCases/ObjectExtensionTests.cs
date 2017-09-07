@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Extensions.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Tests.Objects;
 
 namespace Tests.TestCases
 {
-    [TestClass]
+    [TestFixture]
     public class ObjectExtensionTests
     {
-        [TestMethod]
+        [TestCase()]
         public void ToDictionary()
         {
             TestObject testObject = new TestObject { Name = "Test Object", Age = 123 };
@@ -18,7 +18,7 @@ namespace Tests.TestCases
             Assert.AreEqual(propertyDictionary[nameof(testObject.Age)], testObject.Age);
         }
 
-        [TestMethod]
+        [TestCase()]
         public void PropertiesToDictionaryValueOfType()
         {
             TestObject testObject = new TestObject { Name = "Test Object", Age = 123 };

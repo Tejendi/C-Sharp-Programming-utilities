@@ -1,12 +1,12 @@
 ﻿using Extensions.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Tests.TestCases
 {
-    [TestClass]
+    [TestFixture]
     public class NullableExtensionTests
     {
-        [TestMethod]
+        [TestCase()]
         public void HasValueAndEquals()
         {
             int? notNullValue = 2;
@@ -14,7 +14,7 @@ namespace Tests.TestCases
             Assert.IsTrue(notNullValue.HasValueAndEquals(2));
         }
 
-        [TestMethod]
+        [TestCase()]
         public void DoesNotHaveValue()
         {
             int? nullValue = null;
@@ -23,7 +23,7 @@ namespace Tests.TestCases
         }
 
 
-        [TestMethod]
+        [TestCase()]
         public void HasValueAndEqualsNullTarget()
         {
             int? nullValue = 2;
@@ -31,7 +31,7 @@ namespace Tests.TestCases
             Assert.IsFalse(nullValue.HasValueAndEquals(null));
         }
 
-        [TestMethod]
+        [TestCase()]
         public void DoesNotHaveValueAndEqualsNullTarget()
         {
             int? nullValue = null;

@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using Extensions.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Tests.Objects;
+
 
 namespace Tests.TestCases
 {
-    [TestClass]
+    [TestFixture]
     public class EnumerableExtensionTests
     {
-        [TestMethod]
+        [TestCase()]
         public void IntInList()
         {
             List<int> intList = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
@@ -17,7 +18,7 @@ namespace Tests.TestCases
             Assert.IsTrue(intValue.In(intList));
         }
 
-        [TestMethod]
+        [TestCase()]
         public void ObjectInList()
         {
             List<TestObject> testObjectList = new List<TestObject>()
@@ -30,7 +31,7 @@ namespace Tests.TestCases
             Assert.IsTrue(testObjectList[1].In(testObjectList));
         }
 
-        [TestMethod]
+        [TestCase()]
         public void FindMinValue()
         {
             List<TestObject> testObjectList = new List<TestObject>()
@@ -44,7 +45,7 @@ namespace Tests.TestCases
             Assert.AreEqual(1, minAge.Age);
         }
 
-        [TestMethod]
+        [TestCase()]
         public void FindMinValueWhereAllIsMin()
         {
             List<TestObject> testObjectList = new List<TestObject>()
@@ -58,7 +59,7 @@ namespace Tests.TestCases
             Assert.AreEqual(1, minAge.Age);
         }
 
-        [TestMethod]
+        [TestCase()]
         public void FindMaxValue()
         {
             List<TestObject> testObjectList = new List<TestObject>()
@@ -72,7 +73,7 @@ namespace Tests.TestCases
             Assert.AreEqual(30, maxAge.Age);
         }
 
-        [TestMethod]
+        [TestCase()]
         public void FindMaxValueWhereAllIsMax()
         {
             List<TestObject> testObjectList = new List<TestObject>()

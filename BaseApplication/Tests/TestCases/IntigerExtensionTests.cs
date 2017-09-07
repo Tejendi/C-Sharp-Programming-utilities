@@ -1,12 +1,12 @@
 ﻿using Extensions.Extensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Tests.TestCases
 {
-    [TestClass]
+    [TestFixture]
     public class IntigerExtensionTests
     {
-        [TestMethod]
+        [TestCase()]
         public void IsBetween()
         {
             const int minValue = int.MinValue;
@@ -17,14 +17,14 @@ namespace Tests.TestCases
             Assert.IsTrue(value.IsBetween(minValue, maxValue));
         }
 
-        [TestMethod]
+        [TestCase()]
         public void IsOdd()
         {
             const int value = 1;
             Assert.IsTrue(value.IsOdd());
         }
 
-        [TestMethod]
+        [TestCase()]
         public void IsEven()
         {
             const int value = 2;
